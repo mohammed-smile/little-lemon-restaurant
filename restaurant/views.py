@@ -1,6 +1,7 @@
 # from django.http import HttpResponse
 from django.shortcuts import render
 from .forms import BookingForm
+from .models import Menu
 
 
 def home(request):
@@ -17,3 +18,9 @@ def book(request):
             form.save()
     context = {'form':form}
     return render(request, 'book.html', context)
+
+def menu(request):
+    menu_date = Menu.objects.all()
+    context = {'menu': menu_date}
+
+    return render(request, 'menu.html', context)
