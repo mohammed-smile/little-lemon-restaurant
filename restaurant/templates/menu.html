@@ -1,20 +1,34 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<h1>Menu</h1>
 <div class="column">
-    {% for item in menu %}
-    <p>
-        <a href="{% url 'menu_item' item.pk %}">
-        {{ item.name }}
-        </a>
-        <span class="menu-price">
-            ${{ item.price }}.00
-        </span>
-    </p>
-    {% empty %}
-    <p>The menu is currently empty</p>
-    {% endfor %}
+    <table class="menu-table">
+        <thead>
+            <tr>
+                <th colspan="2"><h2>Menu</h2></th>
+            </tr>
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in menu %}
+            <tr>
+                <td>
+                    <a href="{% url 'menu_item' item.pk %}">
+                        {{ item.name }}
+                    </a>
+                </td>
+                <td>
+                    <span class="menu-price">
+                        ${{ item.price }}.00
+                    </span>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 <!--End col-->
 {% endblock %}

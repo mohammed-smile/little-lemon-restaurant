@@ -235,6 +235,19 @@ footer p {
     font-size: 1rem;
 }
 
+.menu-table {
+    width: 50vw;
+    border-collapse: collapse;
+    border: 1px solid #bbc;
+    margin: 1rem auto;
+    padding: 1rem;
+}
+
+.menu-table th, .menu-table td {
+    border: 1px solid #bbc;
+    padding: 0.5rem;
+}
+
 @media (max-width: 800px) {
     section {
         flex-direction: column;   
