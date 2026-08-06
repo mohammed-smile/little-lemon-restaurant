@@ -21,7 +21,7 @@ def book(request):
     return render(request, 'book.html', context)
 
 def menu(request):
-    menu_date = Menu.objects.all()
+    menu_date = Menu.objects.order_by('name')
     context = {'menu': menu_date}
 
     return render(request, 'menu.html', context)
